@@ -13,8 +13,12 @@ func main() {
 		log.Fatalln("could not create generator", err)
 	}
 
+	fmt.Println(gen.StartUps)
+	fmt.Println("********************************")
+	fmt.Println(gen.Words)
+
 	// Build tweet
-	tweetBody := fmt.Sprintln(gen.startUps[rand.Intn(len(gen.startUps))], "for", gen.words[rand.Intn(len(gen.words))])
+	tweetBody := fmt.Sprintln(gen.StartUps[rand.Intn(len(gen.StartUps))], "for", gen.Words[rand.Intn(len(gen.Words))])
 
 	// Tweet shit it
 	gen.Tweet(tweetBody)

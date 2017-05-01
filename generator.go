@@ -13,8 +13,8 @@ import (
 )
 
 type Generator struct {
-	startUps        []string
-	words           []string
+	StartUps        []string
+	Words           []string
 	consumerKey     string
 	consumerSecret  string
 	accessKey       string
@@ -42,11 +42,11 @@ func New() (*Generator, error) {
 		// For each item found, get the name
 		startup := s.Text()
 		//fmt.Printf("Name %d - %s\n", i, startup)
-		gen.startUps = append(gen.startUps, startup)
+		gen.StartUps = append(gen.StartUps, startup)
 	})
 
 	// Load all uncountabl words to memory
-	gen.words, err = readLines(`./wordlist/unc.txt`)
+	gen.Words, err = readLines(`./wordlist/unc.txt`)
 	if err != nil {
 		return nil, err
 	}
