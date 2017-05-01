@@ -1,0 +1,10 @@
+language: go
+
+go:
+   - 1.8
+
+before_install:
+  - go get -v
+
+script:
+  - go run *.go 
