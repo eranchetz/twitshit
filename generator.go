@@ -44,6 +44,9 @@ func New() (*Generator, error) {
 		//fmt.Printf("Name %d - %s\n", i, startup)
 		gen.StartUps = append(gen.StartUps, startup)
 	})
+	if len(gen.StartUps) == 0 {
+	  return nil, fmt.Errorf("could not get startup list, %s", err)
+	}
 
 	// Load all uncountabl words to memory
 	gen.Words, err = readLines(`./wordlist/unc.txt`)
