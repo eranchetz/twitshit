@@ -45,7 +45,7 @@ func New() (*Generator, error) {
 		gen.StartUps = append(gen.StartUps, startup)
 	})
 	if len(gen.StartUps) == 0 {
-	  return nil, fmt.Errorf("could not get startup list, %s", err)
+		return nil, fmt.Errorf("could not get startup list")
 	}
 
 	// Load all uncountabl words to memory
