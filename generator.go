@@ -27,7 +27,7 @@ func init() {
 
 func New() (*Generator, error) {
 	gen := new(Generator)
-	doc, err := goquery.NewDocument("http://www.startupranking.com/top/united-states")
+	doc, err := goquery.NewDocument("http://webcache.googleusercontent.com/search?q=cache:imp3dTuRncgJ:www.startupranking.com")
 	if err != nil {
 		return nil, err
 	}
@@ -41,7 +41,7 @@ func New() (*Generator, error) {
 	doc.Find(".name").Each(func(i int, s *goquery.Selection) {
 		// For each item found, get the name
 		startup := s.Text()
-		//fmt.Printf("Name %d - %s\n", i, startup)
+		fmt.Printf("Name %d - %s\n", i, startup)
 		gen.StartUps = append(gen.StartUps, startup)
 	})
 	if len(gen.StartUps) == 0 {
