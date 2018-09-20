@@ -27,7 +27,7 @@ func init() {
 
 func New() (*Generator, error) {
 	gen := new(Generator)
-	doc, err := goquery.NewDocument("https://webcache.googleusercontent.com/search?q=cache:Y8GjQluLyjYJ:https://www.startupranking.com/top/united-states+&cd=1&hl=en&ct=clnk&gl=us")
+	doc, err := goquery.NewDocument("https://www.startupranking.com/top/united-states")
 	if err != nil {
 		return nil, err
 	}
